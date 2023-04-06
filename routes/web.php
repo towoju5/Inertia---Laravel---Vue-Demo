@@ -27,7 +27,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'investment'], function() {
     Route::get('/',     [OrderController::class, 'index']);
-    Route::get('new',   [OrderController::class, 'create']);
+    Route::get('/new',   [OrderController::class, 'create']);
 });
 
 Route::group(['prefix' => 'profile', 'middlware' => ['auth']], function() {

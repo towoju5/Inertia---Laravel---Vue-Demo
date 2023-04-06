@@ -5,7 +5,10 @@
         <div class="col-lg-12 stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">My Investment History</h4>
+                    <div class="d-flex  align-items-center justify-content-between mb-3">
+                        <h4 class="card-title pt-1">My Investment History</h4>
+                        <Link href="/investment/new"><button class="btn btn-outline-primary btn-xs">Invest Now</button></Link>
+                    </div>
                     <table class="table table-bordered table-stripe">
                         <thead>
                             <tr>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Plan;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -25,7 +26,7 @@ class OrderController extends Controller
                         'invested_amount' => $order->invested_amount,
                         'end_date'  =>  date('j F Y', strtotime($order->end_date))
                     ]);
-        return inertia('Orders/Index', compact('orders'));
+        return inertia('Orders/index', compact('orders'));
     }
 
     /**
@@ -35,7 +36,15 @@ class OrderController extends Controller
      */
     public function create()
     {
-        return inertia('orders/create');
+        $plans = Plan::all()->map(fn($plan) => [
+            'id'                =>  $plan->id,
+            'plan_name'         =>  $plan->plan_name,
+            'plan_duration'     =>  $plan->plan_duration,
+            'plan_min_price'    =>  $plan->plan_min_price,
+            'plan_max_price'    =>  $plan->plan_max_price,
+            'plan_description'  =>  $plan->plan_description,
+        ]);
+        return inertia('Orders/Create', compact('plans'));
     }
 
     /**
