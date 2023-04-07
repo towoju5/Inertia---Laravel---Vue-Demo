@@ -16,12 +16,16 @@
                                 <td>{{ plan.plan_duration }} Days</td>
                             </tr>
                             <tr>
-                                <th>Minimum Investment</th>
-                                <td>${{ plan.plan_min_price }}</td>
+                                <th>Daily Profit</th>
+                                <td>{{ plan.daily_profit }}% - Daily</td>
                             </tr>
                             <tr>
                                 <th>Minimum Investment</th>
-                                <td>${{ plan.plan_max_price }}</td>
+                                <td>{{vueNumberFormat(`${plan.plan_min_price * 100}`, {})}}</td>
+                            </tr>
+                            <tr>
+                                <th>Maximum Investment</th>
+                                <td>{{vueNumberFormat(`${plan.plan_max_price * 100}`, {})}}</td>
                             </tr>
                             <tr>
                                 <th>Plan Description</th>
@@ -47,7 +51,7 @@
                         </div>
                         <div class="form-group mb-3">
                               <label for="payment_method" class="text-dark">Select Payment Method</label>
-                              <select class="form-control" name="" id="">
+                              <select class="form-control" v-model="form.gateway" id="">
                                 <option value="BTC">Bitcoin</option>
                                 <option value="LTC">Litecoin</option>
                                 <option value="BNB">Binance coin</option>
@@ -55,7 +59,7 @@
                         </div>
                         <div class="form-group mb-3">
                             <label for="amount" class="text-dark">Amount</label>
-                            <input type="text" :required="required" :max="plan.plan_max_price" :min="plan.plan_min_price" name="amount" id="amount" v-model="amount" class="form-control form-control-lg">
+                            <input type="text" :required="required" :max="plan.plan_max_price" :min="plan.plan_min_price" name="amount" id="amount" v-model="form.amount" class="form-control form-control-lg">
                         </div>
                         <div class="form-group mt-3 text-center">
                             <button class="btn btn-lg btn-outline-behance" :type="submit">Proceed...</button>
@@ -68,7 +72,19 @@
 </template>
 
 <script setup>
+import { Inertia } from '@inertiajs/inertia';
+import { reactive } from 'vue'
+
 defineProps({
     plan: Object,
 });
+
+const form = reactive({
+      gateway : '',
+      amount: '',
+})
+
+let subscribeNow = () => {
+      Inertia.post('investment/subscribe', form)
+}
 </script>

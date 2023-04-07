@@ -13,22 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('investments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger("plan_id");
-            $table->string("invested_amount");
+            $table->string('plan_id');
+            $table->string('invest_amount');
             $table->string('gateway');
             $table->string('invest_start');
             $table->string('invest_ends');
             $table->string('daily_profit');
             $table->longText('meta_data');
-            $table->decimal('balance_before')->default(0.00);
-            $table->decimal('balance_after')->default(0.00);
             $table->timestamps();
-            $table->timestamp("deleted_at")->nullable();
+            $table->timestamp('deleted_at')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('plan_id')->references('id')->on('plans');
         });
     }
 
@@ -39,6 +36,12 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('investments');
     }
 };
+
+
+
+
+
+

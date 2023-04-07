@@ -15,17 +15,25 @@
                                 <th>#</th>
                                 <th>Investment Plan</th>
                                 <th>Amount Invested</th>
+                                <th>Daily Profit</th>
                                 <th>Date Invested</th>
                                 <th>Investment Ends</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="order in orders.data" :key="order.id">
                                 <td>{{ order.id }}</td>
                                 <td>{{ order.plan_name }}</td>
-                                <td>{{ order.invested_amount }}</td>
+                                <td>{{vueNumberFormat(`${order.invested_amount * 100}`, {})}}</td>
+                                <td>{{ order.daily_profit }}</td>
                                 <td>{{ order.created_at }}</td>
                                 <td>{{ order.end_date}}</td>
+                                <td>
+                                    <Link :href="`/investment/details/${order.id}`">
+                                        <button class="btn btn-primary btn-sm "><i class="mdi mdi-eye"></i></button>
+                                    </Link>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

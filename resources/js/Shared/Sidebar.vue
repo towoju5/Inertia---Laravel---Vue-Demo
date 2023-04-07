@@ -20,6 +20,18 @@
             <span class="menu-title">Profile</span>
           </NavLink>
         </li>
+        <li class="nav-item">
+          <NavLink class="nav-link" href="/deposit">
+            <span class="icon-bg"><i class="mdi mdi-download menu-icon"></i></span>
+            <span class="menu-title">Deposit</span>
+          </NavLink>
+        </li>
+        <li class="nav-item">
+          <NavLink class="nav-link" href="/withdrawal">
+            <span class="icon-bg"><i class="mdi mdi-upload menu-icon"></i></span>
+            <span class="menu-title">Withdraw</span>
+          </NavLink>
+        </li>
 
         <li class="nav-item">
           <NavLink class="nav-link" href="/logout" method="post">

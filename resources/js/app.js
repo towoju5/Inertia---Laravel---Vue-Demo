@@ -2,7 +2,8 @@ import { createApp, h } from 'vue'
 import { createInertiaApp, Head, Link } from '@inertiajs/inertia-vue3'
 import NProgress from 'nprogress'
 import { router } from '@inertiajs/vue3'
-import Layout from './Shared/Layout.vue';
+import Layout from './Shared/Layout.vue'
+import VueNumberFormat from 'vue-number-format'
 
 createInertiaApp({
       resolve: name => {
@@ -13,6 +14,7 @@ createInertiaApp({
       setup({ el, App, props, plugin }) {
             createApp({ render: () => h(App, props) })
                   .use(plugin)
+                  .use(VueNumberFormat, {prefix: 'US$ ', decimal: ',', thousand: '.'})
                   .component('Head', Head)
                   .component('Link', Link)
                   .mount(el)

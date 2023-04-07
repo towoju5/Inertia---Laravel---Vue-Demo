@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Investment;
 use App\Models\Order;
 use App\Models\Plan;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -21,10 +23,11 @@ class OrderController extends Controller
                     ->withQueryString()
                     ->through(fn($order) => [
                         'plan_name' => $order->plan->plan_name,
+                        'daily_profit' => $order->plan->daily_profit.'% - Daily',
                         'id'    =>  $order->id,
                         'created_at'    =>  date('j F Y', strtotime($order->created_at)),
                         'invested_amount' => $order->invested_amount,
-                        'end_date'  =>  date('j F Y', strtotime($order->end_date))
+                        'end_date'  =>  date('j F, Y', strtotime($order->invest_ends))
                     ]);
         return inertia('Orders/index', compact('orders'));
     }
@@ -39,6 +42,7 @@ class OrderController extends Controller
         $plans = Plan::all()->map(fn($plan) => [
             'id'                =>  $plan->id,
             'plan_name'         =>  $plan->plan_name,
+            'daily_profit'      =>  $plan->daily_profit,
             'plan_duration'     =>  $plan->plan_duration,
             'plan_min_price'    =>  $plan->plan_min_price,
             'plan_max_price'    =>  $plan->plan_max_price,
@@ -53,9 +57,32 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function subscribe(Request $request, $plan_id)
     {
-        //
+        // validate incoming request
+        $validate = $this->validate($request, [
+            'gateway'   =>  'required',
+            'amount'    =>  'required'
+        ]);
+
+        $plan = Plan::find($plan_id);
+
+        // check user wallet balance and charge or reject transaction.
+
+        // Insert new investment to database
+        $new = new Order();
+
+        $new->plan_id           =   $plan_id;
+        $new->user_id           =   auth()->id();
+        $new->invested_amount   =   $request->amount;
+        $new->gateway           =   $request->gateway;
+        $new->invest_start      =   Carbon::now();
+        $new->invest_ends       =   Carbon::today()->addDays($plan->plan_duration);
+        $new->daily_profit      =   $plan->daily_profit;
+        $new->meta_data         =   [];
+        $new->save();
+
+        return redirect(url('investment'))->with('success', 'Investment plan inititated successfully');
     }
 
     /**

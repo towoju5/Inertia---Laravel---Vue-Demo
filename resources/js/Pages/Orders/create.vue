@@ -11,8 +11,9 @@
                               <ul class="list-unstyled mt-3 mb-4">
                                     <li>Min Investment: ${{ plan.plan_min_price }}</li>
                                     <li>Max Investment: ${{ plan.plan_max_price }}</li>
+                                    <li>Daily Profits:  {{ plan.daily_profit }}% -Daily</li>
                                     <li>Duration: {{ plan.plan_duration }} Days</li>
-                                    <li>{{ plan.plan_description }}</li>
+                                    <li class="border p-2 text-left">{{ plan.plan_description }}</li>
                               </ul>
                               <Link :href="`/investment/${plan.id}/invest`">
                                     <button type="button" class="btn btn-sm btn-block btn-outline-primary">Invest Now</button>

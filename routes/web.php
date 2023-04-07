@@ -26,9 +26,10 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'investment'], function() {
-    Route::get('/',             [OrderController::class, 'index']);
-    Route::get('new',           [OrderController::class, 'create']);
-    Route::get('{id}/invest',   [OrderController::class, 'show']);
+    Route::get('/',                              [OrderController::class, 'index']);
+    Route::get('new',                            [OrderController::class, 'create']);
+    Route::get('{id}/invest',                    [OrderController::class, 'show']);
+    Route::post('{id}/investment/subscribe',     [OrderController::class, 'subscribe']);
 });
 
 Route::group(['prefix' => 'profile', 'middlware' => ['auth']], function() {
