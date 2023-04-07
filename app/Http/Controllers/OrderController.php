@@ -66,7 +66,7 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $plan = Plan::findorFail($id);
+        $plan = Plan::find($id);
         return inertia('Orders/Show', compact('plan'));
     }
 

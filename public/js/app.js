@@ -41,36 +41,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Show',
   props: {
-    plans: Object
-    // user: $page.auth.user
+    plan: Object
   },
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
-    var formData = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)({
-      email: '',
-      name: '',
-      password: '',
-      phone: '',
-      profile_image: ''
-    });
-    var updateForm = function updateForm() {
-      // console.log(formData)
-      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.post('/users', form);
-    };
-    var __returned__ = {
-      formData: formData,
-      updateForm: updateForm,
-      Inertia: _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia,
-      reactive: vue__WEBPACK_IMPORTED_MODULE_1__.reactive
-    };
+    var __returned__ = {};
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
       value: true
@@ -122,15 +101,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Index',
   props: {
-    data: Object
+    plans: Object
+    // user: $page.props.auth.user
   },
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
-    var __returned__ = {};
+    var formData = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)({
+      email: "",
+      name: "",
+      password: "",
+      phone: "",
+      profile_image: ""
+    });
+    var updateForm = function updateForm() {
+      // console.log(formData)
+      _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia.post("/investment/subscribe", form);
+    };
+    var __returned__ = {
+      formData: formData,
+      updateForm: updateForm,
+      Inertia: _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_0__.Inertia,
+      reactive: vue__WEBPACK_IMPORTED_MODULE_1__.reactive
+    };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
       value: true
@@ -463,9 +463,96 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 /*!****************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Orders/Show.vue?vue&type=template&id=3cbec16e ***!
   \****************************************************************************************************************************************************************************************************************************************************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/user/Sites/demo/resources/js/Pages/Orders/Show.vue: Unexpected token (268:87)\n\n\u001b[0m \u001b[90m 266 |\u001b[39m                 _hoisted_7\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 267 |\u001b[39m                 _createElementVNode(\u001b[32m\"div\"\u001b[39m\u001b[33m,\u001b[39m _hoisted_8\u001b[33m,\u001b[39m [\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 268 |\u001b[39m                   _createElementVNode(\u001b[32m\"h4\"\u001b[39m\u001b[33m,\u001b[39m _hoisted_9\u001b[33m,\u001b[39m _toDisplayString(ucwords($user\u001b[33m-\u001b[39m\u001b[33m>\u001b[39mname))\u001b[33m,\u001b[39m \u001b[35m1\u001b[39m \u001b[90m/* TEXT */\u001b[39m)\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m                                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 269 |\u001b[39m                   _createElementVNode(\u001b[32m\"span\"\u001b[39m\u001b[33m,\u001b[39m _hoisted_10\u001b[33m,\u001b[39m _toDisplayString(ucwords(auth()\u001b[33m-\u001b[39m\u001b[33m>\u001b[39muser()\u001b[33m-\u001b[39m\u001b[33m>\u001b[39mrole))\u001b[33m,\u001b[39m \u001b[35m1\u001b[39m \u001b[90m/* TEXT */\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m 270 |\u001b[39m                 ])\u001b[0m\n\u001b[0m \u001b[90m 271 |\u001b[39m               ])\u001b[0m\n    at instantiate (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:653:32)\n    at constructor (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:947:12)\n    at Parser.raise (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:3271:19)\n    at Parser.unexpected (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:3301:16)\n    at Parser.parseExprAtom (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:11269:16)\n    at Parser.parseExprSubscripts (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10880:23)\n    at Parser.parseUpdate (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10863:21)\n    at Parser.parseMaybeUnary (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10839:23)\n    at Parser.parseMaybeUnaryOrPrivate (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10677:61)\n    at Parser.parseExprOpBaseRightExpr (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10770:34)\n    at Parser.parseExprOpRightExpr (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10765:21)\n    at Parser.parseExprOp (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10728:27)\n    at Parser.parseExprOps (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10686:17)\n    at Parser.parseMaybeConditional (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10659:23)\n    at Parser.parseMaybeAssign (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10620:21)\n    at /Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10590:39\n    at Parser.allowInAnd (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:12265:12)\n    at Parser.parseMaybeAssignAllowIn (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10590:17)\n    at Parser.parseExprListItem (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:12017:18)\n    at Parser.parseCallExpressionArguments (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:11072:22)\n    at Parser.parseCoverCallAndAsyncArrowHead (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10987:29)\n    at Parser.parseSubscript (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10922:19)\n    at Parser.parseSubscripts (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10893:19)\n    at Parser.parseExprSubscripts (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10884:17)\n    at Parser.parseUpdate (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10863:21)\n    at Parser.parseMaybeUnary (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10839:23)\n    at Parser.parseMaybeUnaryOrPrivate (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10677:61)\n    at Parser.parseExprOps (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10682:23)\n    at Parser.parseMaybeConditional (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10659:23)\n    at Parser.parseMaybeAssign (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10620:21)\n    at /Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10590:39\n    at Parser.allowInAnd (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:12265:12)\n    at Parser.parseMaybeAssignAllowIn (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10590:17)\n    at Parser.parseExprListItem (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:12017:18)\n    at Parser.parseCallExpressionArguments (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:11072:22)\n    at Parser.parseCoverCallAndAsyncArrowHead (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10987:29)\n    at Parser.parseSubscript (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10922:19)\n    at Parser.parseSubscripts (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10893:19)\n    at Parser.parseExprSubscripts (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10884:17)\n    at Parser.parseUpdate (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10863:21)\n    at Parser.parseMaybeUnary (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10839:23)\n    at Parser.parseMaybeUnaryOrPrivate (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10677:61)\n    at Parser.parseExprOps (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10682:23)\n    at Parser.parseMaybeConditional (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10659:23)\n    at Parser.parseMaybeAssign (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10620:21)\n    at /Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10590:39\n    at Parser.allowInAnd (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:12265:12)\n    at Parser.parseMaybeAssignAllowIn (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:10590:17)\n    at Parser.parseExprListItem (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:12017:18)\n    at Parser.parseCallExpressionArguments (/Users/user/Sites/demo/node_modules/@babel/parser/lib/index.js:11072:22)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "row"
+};
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"col-lg-6 grid-margin stretch-card\"><div class=\"card\"><div class=\"card-header\"><h3 class=\"text-dark\">Plan Details</h3></div><div class=\"card-body\"><table class=\"table\"><thead><tr><th>Created</th><th>Status</th></tr></thead><tbody><tr><td>Jacob</td><td>53275531</td></tr></tbody></table></div></div></div>", 1);
+var _hoisted_3 = {
+  "class": "col-lg-6 grid-margin stretch-card"
+};
+var _hoisted_4 = {
+  "class": "card"
+};
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card-header"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
+  "class": "text-dark"
+}, "Subscribe to plan")], -1 /* HOISTED */);
+var _hoisted_6 = {
+  "class": "card-body"
+};
+var _hoisted_7 = {
+  "class": "form-group mb-3"
+};
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "plan_name",
+  "class": "text-dark"
+}, "Plan Name", -1 /* HOISTED */);
+var _hoisted_9 = ["value"];
+var _hoisted_10 = {
+  "class": "form-group mb-3"
+};
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "plan_duration",
+  "class": "text-dark"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Plan Duration "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("small", null, "in Days")], -1 /* HOISTED */);
+var _hoisted_12 = ["value"];
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"form-group mb-3\"><label for=\"payment_method\" class=\"text-dark\">Select Payment Method</label><select class=\"form-control\" name=\"\" id=\"\"><option value=\"BTC\">Bitcoin</option><option value=\"LTC\">Litecoin</option><option value=\"BNB\">Binance coin</option></select></div>", 1);
+var _hoisted_14 = {
+  "class": "form-group mb-3"
+};
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+  "for": "amount",
+  "class": "text-dark"
+}, "Amount", -1 /* HOISTED */);
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "form-group mt-3 text-center"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  "class": "btn btn-lg btn-outline-behance"
+}, "Proceed...")], -1 /* HOISTED */);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, {
+    title: "Invest now"
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+    onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return _ctx.subscribeNow && _ctx.subscribeNow.apply(_ctx, arguments);
+    }, ["prevent"])),
+    autocomplete: "off"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    name: "plan_name",
+    id: "plan_name",
+    readonly: "",
+    value: $props.plan.plan_name,
+    "class": "form-control form-control-lg"
+  }, null, 8 /* PROPS */, _hoisted_9)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    name: "plan_duration",
+    id: "plan_duration",
+    readonly: "",
+    value: $props.plan.plan_duration,
+    "class": "form-control form-control-lg"
+  }, null, 8 /* PROPS */, _hoisted_12)]), _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_14, [_hoisted_15, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    name: "amount",
+    id: "amount",
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return _ctx.amount = $event;
+    }),
+    "class": "form-control form-control-lg"
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.amount]])]), _hoisted_16], 32 /* HYDRATE_EVENTS */)])])])])], 64 /* STABLE_FRAGMENT */);
+}
 
 /***/ }),
 
@@ -548,13 +635,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, " // ")], -1 /* HOISTED */);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, {
     title: "My Profile"
-  }), _hoisted_1], 64 /* STABLE_FRAGMENT */);
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.auth.user), 1 /* TEXT */)], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -874,13 +959,13 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "navbar-brand brand-logo",
   href: "/"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "assets/images/logo.svg",
+  src: "/assets/images/logo.svg",
   alt: "logo"
 })]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   "class": "navbar-brand brand-logo-mini",
   href: "/"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "assets/images/logo-mini.svg",
+  src: "/assets/images/logo-mini.svg",
   alt: "logo"
 })])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "navbar-menu-wrapper d-flex align-items-stretch"
@@ -1020,7 +1105,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "nav-profile-img"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "assets/images/faces/face28.png",
+  src: "/assets/images/faces/face28.png",
   alt: "image"
 })]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "nav-profile-text"
@@ -1034,7 +1119,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "p-3 text-center bg-primary"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
   "class": "img-avatar img-avatar48 img-avatar-thumb",
-  src: "assets/images/faces/face28.png",
+  src: "/assets/images/faces/face28.png",
   alt: ""
 })]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "p-2"
@@ -2110,6 +2195,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Show_vue_vue_type_template_id_3cbec16e__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Show_vue_vue_type_template_id_3cbec16e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Show.vue?vue&type=template&id=3cbec16e */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Orders/Show.vue?vue&type=template&id=3cbec16e");
 
 
