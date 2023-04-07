@@ -6,16 +6,26 @@
                 <div class="card-header"><h3 class="text-dark">Plan Details</h3></div>
                 <div class="card-body">
                     <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Created</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
                         <tbody>
                             <tr>
-                                <td>Jacob</td>
-                                <td>53275531</td>
+                                <th>Plan Name</th>
+                                <td>{{ plan.plan_name}}</td>
+                            </tr>
+                            <tr>
+                                <th>Plan Durations</th>
+                                <td>{{ plan.plan_duration }} Days</td>
+                            </tr>
+                            <tr>
+                                <th>Minimum Investment</th>
+                                <td>${{ plan.plan_min_price }}</td>
+                            </tr>
+                            <tr>
+                                <th>Minimum Investment</th>
+                                <td>${{ plan.plan_max_price }}</td>
+                            </tr>
+                            <tr>
+                                <th>Plan Description</th>
+                                <p class="pt-3">{{ plan.plan_description }}</p>
                             </tr>
                         </tbody>
                     </table>
@@ -45,10 +55,10 @@
                         </div>
                         <div class="form-group mb-3">
                             <label for="amount" class="text-dark">Amount</label>
-                            <input type="text" name="amount" id="amount" v-model="amount" class="form-control form-control-lg">
+                            <input type="text" :required="required" :max="plan.plan_max_price" :min="plan.plan_min_price" name="amount" id="amount" v-model="amount" class="form-control form-control-lg">
                         </div>
                         <div class="form-group mt-3 text-center">
-                            <button class="btn btn-lg btn-outline-behance">Proceed...</button>
+                            <button class="btn btn-lg btn-outline-behance" :type="submit">Proceed...</button>
                         </div>
                     </form>
                 </div>
